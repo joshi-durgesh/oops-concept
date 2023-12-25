@@ -1,3 +1,4 @@
+"use strict";
 const productList = {
   products: [
     {
@@ -20,7 +21,7 @@ const productList = {
     const prodList = document.createElement("ul");
     prodList.className = "product-list";
     for (const prod of this.products) {
-      const prodEl = doucment.createElement("li");
+      const prodEl = document.createElement("li");
       prodEl.className = "product-item";
       prodEl.innerHTML = `
         <div>
