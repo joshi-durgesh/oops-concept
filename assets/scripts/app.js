@@ -1,20 +1,31 @@
-"use strict";
+class Product {
+  // title = "DEFAULT";
+  // imageUrl;
+  // description;
+  // price;
+
+  constructor(title, image, desc, price) {
+    this.title = title;
+    this.imageUrl = image;
+    this.description = desc;
+    this.price = price;
+  }
+}
+
 const productList = {
   products: [
-    {
-      title: "A pillow",
-      imageUrl:
-        "https://www.gooten.com/wp-content/uploads/2021/04/Throw_Pillow_Catalog_Photo_01.png",
-      price: 34.53,
-      description: "A soft pillow!",
-    },
-    {
-      title: "A Carpet",
-      imageUrl:
-        "https://t4.ftcdn.net/jpg/00/89/76/09/360_F_89760942_RmpjUzGtDcERW1rlkNaifMr58NCVu7YB.jpg",
-      price: 34.53,
-      description: "A carpet which you might like - or not.",
-    },
+    new Product(
+      "A pillow",
+      "https://www.gooten.com/wp-content/uploads/2021/04/Throw_Pillow_Catalog_Photo_01.png",
+      "A soft pillow!",
+      34.53
+    ),
+    new Product(
+      "A Carpet",
+      "https://t4.ftcdn.net/jpg/00/89/76/09/360_F_89760942_RmpjUzGtDcERW1rlkNaifMr58NCVu7YB.jpg",
+      "A carpet which you might like - or not.",
+      34.53
+    ),
   ],
   render() {
     const renderHook = document.getElementById("app");
