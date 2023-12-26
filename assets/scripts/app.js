@@ -15,9 +15,25 @@ class Product {
 class ShoppingCart {
   items = [];
 
+  set cartItemss(value) {
+    this.items = value;
+    this.totalOutput.innerHTML = `<h2>Total: \$${this.totalAmount.toFixed(
+      2
+    )}</h2>`;
+  }
+
+  get totalAmount() {
+    const sum = this.items.reduce(
+      (prevValue, curItem) => prevValue + curItem.price,
+      0
+    );
+    return sum;
+  }
+
   addProduct(product) {
-    this.items.push(product);
-    this.totalOutput.innerHTML = `<h2>Total: \$${0}</h2>`;
+    const updatedItems = [...this.items];
+    updatedItems.push(product);
+    this.cartItemss = updatedItems;
   }
 
   render() {
@@ -73,7 +89,7 @@ class ProductList {
       "A Carpet",
       "https://t4.ftcdn.net/jpg/00/89/76/09/360_F_89760942_RmpjUzGtDcERW1rlkNaifMr58NCVu7YB.jpg",
       "A carpet which you might like - or not.",
-      34.53
+      39.53
     ),
   ];
 
